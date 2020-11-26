@@ -1,0 +1,19 @@
+<hello name="{{ name }}"></hello>
+<!-- {{this.products |json}} -->
+<ul>
+	<li *ngFor="let champ of products | keyvalue">
+		<label style="font-size: 20px;font-weight: bold;color: red;">
+      {{champ.key}}
+    </label>
+		<ul *ngFor="let item of champ.value | keyvalue">
+			<li>
+				{{item.key}} : {{item.value}}
+				<ul *ngFor="let sub of item.value | keyvalue">
+					<li>
+						{{sub.key}} : {{sub.value}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
