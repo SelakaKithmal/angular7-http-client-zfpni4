@@ -22,7 +22,7 @@ export class AppComponent {
   getChamp() {
     this.httpClient.get(this.apiURL).subscribe((data: any) => {
       this.products = data.data;
-      let val = Object.keys(data.data).map((key: any, obj: any) => obj[key]);
+      Object.keys(data.data).map((key: any, obj: any) => obj[key]);
     });
   }
 }
